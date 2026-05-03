@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shayaan Salahuddin — Product Designer</title>
+<meta name="description" content="Shayaan Salahuddin — Product designer and entrepreneur. UX, product strategy, accessible design. Based in Sydney, AU.">
+<link rel="stylesheet" href="style.css">
+<style>
+/* ─── HERO ─────────────────────────────────── */
+#hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-bg-grid {
+  position: absolute; inset: 0; z-index: 0;
+  background-image:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
+}
+
+.hero-glow {
+  position: absolute;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(198,241,53,0.07) 0%, transparent 70%);
+  top: 50%; left: 50%;
+  transform: translate(-50%, -55%);
+  pointer-events: none; z-index: 0;
+}
+
+.hero-inner {
+  position: relative; z-index: 1;
+  width: 100%;
+}
+
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--green);
+  background: rgba(198,241,53,0.08);
+  border: 1px solid rgba(198,241,53,0.2);
+  border-radius: 100px;
+  padding: 5px 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 2.5rem;
+  animation: fadeUp 0.5s ease both;
+}
+
+.hero-badge-dot {
+  width: 6px; height: 6px;
+  background: var(--green);
+  border-radius: 50%;
+  animation: blink 2s ease-in-out infinite;
+}
+
+.hero-headline {
+  font-family: var(--syne);
+  font-size: clamp(52px, 7vw, 96px);
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  color: var(--white);
+  margin-bottom: 2rem;
+  animation: fadeUp 0.5s 0.1s ease both;
+}
+
+.hero-headline .accent {
+  color: var(--green);
+  font-family: var(--serif);
+  font-weight: 400;
+  font-style: italic;
+}
+
+.hero-headline .dim { color: var(--white-faint); }
+
+.hero-sub {
+  font-size: 17px;
+  font-weight: 400;
+  color: var(--white-dim);
+  line-height: 1.7;
+  max-width: 500px;
+  margin-bottom: 3rem;
+  animation: fadeUp 0.5s 0.2s ease both;
+}
+
+.hero-actions {
+  display: flex; gap: 1rem; flex-wrap: wrap;
+  animation: fadeUp 0.5s 0.3s ease both;
+}
+
+.hero-right {
+  position: absolute; right: 0; top: 50%;
+  transform: translateY(-50%);
+  display: flex; flex-direction: column; gap: 1rem;
+  animation: fadeIn 0.8s 0.5s ease both;
+}
+
+.hero-stat-card {
+  background: var(--black-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1.1rem 1.5rem;
+  text-align: right;
+}
+
+.hero-stat-num {
+  font-family: var(--syne);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--green);
+  display: block;
+  line-height: 1;
+}
+
+.hero-stat-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--white-faint);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+
+.hero-scroll {
+  position: absolute; bottom: 2.5rem; left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--white-faint);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  animation: fadeIn 1s 0.8s ease both;
+}
+
+.scroll-line {
+  width: 1px; height: 40px;
+  background: linear-gradient(to bottom, var(--green), transparent);
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.4; transform: scaleY(1); }
+  50% { opacity: 1; transform: scaleY(1.1); }
+}
+
+/* ─── ABOUT ─────────────────────────────────── */
+#about {
+  padding: 8rem 0;
+  border-top: 1px solid var(--border);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+.about-heading {
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  margin-bottom: 1.75rem;
+}
+
+.about-heading .serif {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--green);
+}
+
+.about-text {
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--white-dim);
+  line-height: 1.8;
+  margin-bottom: 1.25rem;
+}
+
+.about-text strong { color: var(--white); font-weight: 600; }
+
+.skills-section { margin-top: 2.5rem; }
+
+.skills-heading {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--white-faint);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.skill-item {
+  display: flex; align-items: center; gap: 10px;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--white-dim);
+  padding: 8px 12px;
+  background: var(--black-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.skill-item:hover { border-color: var(--border-hover); color: var(--white); }
+
+.skill-dot {
+  width: 5px; height: 5px;
+  background: var(--green);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ─── PROJECTS ─────────────────────────────── */
+#projects {
+  padding: 8rem 0;
+  border-top: 1px solid var(--border);
+}
+
+.projects-header {
+  display: flex; align-items: flex-end; justify-content: space-between;
+  margin-bottom: 3rem;
+}
+
+.projects-heading {
+  font-size: clamp(36px, 4.5vw, 54px);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.05;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 16px;
+}
+
+/* Featured card — 8 cols */
+.project-card-featured {
+  grid-column: span 8;
+  background: var(--black-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.25s, transform 0.25s;
+  cursor: none;
+}
+
+.project-card-featured:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-3px);
+}
+
+/* Regular card — 4 cols */
+.project-card {
+  grid-column: span 4;
+  background: var(--black-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.25s, transform 0.25s;
+  cursor: none;
+}
+
+.project-card:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-3px);
+}
+
+.project-card-wide {
+  grid-column: span 6;
+  background: var(--black-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.25s, transform 0.25s;
+  cursor: none;
+}
+
+.project-card-wide:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-3px);
+}
+
+.project-thumb {
+  width: 100%; aspect-ratio: 16/9;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 48px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.project-thumb-sm {
+  width: 100%; aspect-ratio: 4/3;
+  display: flex; align-items: center; justify-content: center;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.project-body {
+  padding: 1.75rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-body-sm {
+  padding: 1.25rem 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-meta {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 0.9rem;
+}
+
+.project-year {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--white-faint);
+  letter-spacing: 0.06em;
+}
+
+.project-title {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin-bottom: 0.65rem;
+  color: var(--white);
+}
+
+.project-title-sm {
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+  color: var(--white);
+}
+
+.project-desc {
+  font-size: 14px;
+  color: var(--white-dim);
+  line-height: 1.65;
+  flex: 1;
+  margin-bottom: 1.25rem;
+}
+
+.project-desc-sm {
+  font-size: 13px;
+  color: var(--white-dim);
+  line-height: 1.6;
+  flex: 1;
+  margin-bottom: 1rem;
+}
+
+.project-tags {
+  display: flex; gap: 6px; flex-wrap: wrap;
+}
+
+.project-footer {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.project-cta {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--green);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  display: flex; align-items: center; gap: 6px;
+  transition: gap 0.2s;
+}
+
+a:hover .project-cta { gap: 10px; }
+
+/* Thumb illustrations */
+.thumb-resolve {
+  background: linear-gradient(135deg, #0D1A0D 0%, #111F0A 100%);
+}
+
+.thumb-nurse {
+  background: linear-gradient(135deg, #0A0F1A 0%, #0D1525 100%);
+}
+
+.thumb-grocery {
+  background: linear-gradient(135deg, #0A150F 0%, #0D1A12 100%);
+}
+
+.thumb-web {
+  background: linear-gradient(135deg, #13100A 0%, #1A150A 100%);
+}
+
+.thumb-visual {
+  background: linear-gradient(135deg, #150A1A 0%, #1A0D20 100%);
+}
+
+.thumb-code {
+  background: linear-gradient(135deg, #0A1215 0%, #0D181C 100%);
+}
+
+/* Phone mockup */
+.phone-mock {
+  width: 110px;
+  background: #0F0F0F;
+  border: 2px solid #333;
+  border-radius: 20px;
+  padding: 8px 6px;
+  display: flex; flex-direction: column; gap: 4px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+
+.phone-notch {
+  width: 30px; height: 5px;
+  background: #222;
+  border-radius: 100px;
+  align-self: center;
+  margin-bottom: 2px;
+}
+
+.phone-row {
+  background: #1A1A1A;
+  border-radius: 6px;
+  padding: 5px 7px;
+  font-size: 7px;
+  color: #C6F135;
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+.phone-bar {
+  height: 5px;
+  background: #C6F135;
+  border-radius: 100px;
+  margin-top: 2px;
+}
+
+.phone-bar.dim { background: #2A2A2A; width: 70%; }
+
+/* Tablet mockup */
+.tablet-mock {
+  width: 160px;
+  background: #0F0F0F;
+  border: 2px solid #2A2A2A;
+  border-radius: 12px;
+  padding: 10px 8px;
+  display: flex; flex-direction: column; gap: 5px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+
+.tablet-row {
+  background: #181818;
+  border-radius: 5px;
+  padding: 5px 8px;
+  font-size: 7px;
+  color: #5A8ACA;
+  font-family: 'IBM Plex Mono', monospace;
+  display: flex; align-items: center; gap: 5px;
+}
+
+.tablet-dot { width: 5px; height: 5px; border-radius: 50%; flex-shrink: 0; }
+
+/* Browser mockup */
+.browser-mock {
+  width: 180px;
+  background: #0F0F0F;
+  border: 1px solid #2A2A2A;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+
+.browser-bar {
+  background: #181818;
+  padding: 6px 10px;
+  display: flex; align-items: center; gap: 5px;
+  border-bottom: 1px solid #222;
+}
+
+.browser-dot { width: 6px; height: 6px; border-radius: 50%; }
+
+.browser-url {
+  flex: 1;
+  background: #222;
+  border-radius: 3px;
+  height: 12px;
+  margin-left: 6px;
+}
+
+.browser-content {
+  padding: 10px;
+  display: flex; flex-direction: column; gap: 5px;
+}
+
+.browser-line {
+  height: 7px;
+  background: #1F1F1F;
+  border-radius: 3px;
+}
+
+/* ─── EXPERIENCE ────────────────────────────── */
+#experience {
+  padding: 8rem 0;
+  border-top: 1px solid var(--border);
+}
+
+.exp-heading {
+  font-size: clamp(36px, 4.5vw, 54px);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  margin-bottom: 3.5rem;
+}
+
+.exp-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.exp-row {
+  display: grid;
+  grid-template-columns: 180px 1fr auto;
+  gap: 2rem;
+  align-items: start;
+  padding: 2rem 0;
+  border-top: 1px solid var(--border);
+  transition: background 0.2s;
+}
+
+.exp-row:last-child { border-bottom: 1px solid var(--border); }
+
+.exp-period {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--white-faint);
+  letter-spacing: 0.06em;
+  padding-top: 3px;
+}
+
+.exp-role {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  margin-bottom: 2px;
+}
+
+.exp-company {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--green);
+  letter-spacing: 0.04em;
+  margin-bottom: 0.75rem;
+}
+
+.exp-desc {
+  font-size: 14px;
+  color: var(--white-dim);
+  line-height: 1.7;
+  max-width: 540px;
+  margin-bottom: 0.75rem;
+}
+
+.exp-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+
+.exp-type {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--white-faint);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  padding-top: 3px;
+}
+
+/* ─── CONTACT ───────────────────────────────── */
+#contact {
+  padding: 8rem 0 10rem;
+  border-top: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-glow {
+  position: absolute;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(198,241,53,0.06) 0%, transparent 70%);
+  bottom: -100px; right: -100px;
+  pointer-events: none;
+}
+
+.contact-inner { position: relative; z-index: 1; max-width: 700px; }
+
+.contact-heading {
+  font-size: clamp(42px, 6vw, 72px);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.0;
+  margin-bottom: 1.5rem;
+}
+
+.contact-heading .green { color: var(--green); }
+.contact-heading .serif {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-style: italic;
+}
+
+.contact-sub {
+  font-size: 16px;
+  color: var(--white-dim);
+  line-height: 1.7;
+  max-width: 480px;
+  margin-bottom: 2.5rem;
+}
+
+.contact-actions { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 3rem; }
+
+.contact-row {
+  display: flex; gap: 2rem; flex-wrap: wrap;
+}
+
+.contact-item {
+  display: flex; flex-direction: column; gap: 2px;
+}
+
+.contact-item-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--white-faint);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.contact-item-val {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--white-dim);
+}
+
+/* ─── RESPONSIVE ────────────────────────────── */
+@media (max-width: 900px) {
+  .hero-right { display: none; }
+  .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .project-card-featured { grid-column: span 12; }
+  .project-card { grid-column: span 12; }
+  .project-card-wide { grid-column: span 12; }
+  .exp-row { grid-template-columns: 1fr; gap: 0.5rem; }
+  .exp-type { display: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="cursor"></div>
+<div class="cursor-ring"></div>
+
+<nav>
+  <a class="nav-logo" href="index.html">SS_</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Work</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a class="nav-cta" href="#contact">Hire me</a>
+</nav>
+
+<!-- ═══════════════════════════════════════════
+     HERO
+═══════════════════════════════════════════ -->
+<section id="hero">
+  <div class="hero-bg-grid"></div>
+  <div class="hero-glow"></div>
+
+  <div class="container hero-inner">
+    <div style="max-width: 680px;">
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        Available for internships · Sydney, AU
+      </div>
+
+      <h1 class="hero-headline">
+        <span class="dim">Design</span><br>
+        that <span class="accent">ships.</span>
+      </h1>
+
+      <p class="hero-sub">
+        I'm Shayaan — a product designer and entrepreneur with experience across startups, fintech, and government. Currently at DEWR, studying at the University of Sydney.
+      </p>
+
+      <div class="hero-actions">
+        <a class="btn-primary" href="#projects">View my work</a>
+        <a class="btn-ghost" href="#contact">Let's talk</a>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="hero-stat-card">
+        <span class="hero-stat-num">7+</span>
+        <span class="hero-stat-label">Projects shipped</span>
+      </div>
+      <div class="hero-stat-card">
+        <span class="hero-stat-num">2</span>
+        <span class="hero-stat-label">Degrees in progress</span>
+      </div>
+      <div class="hero-stat-card">
+        <span class="hero-stat-num">Gov · Startup · Fintech</span>
+        <span class="hero-stat-label">Industry range</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    Scroll
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     ABOUT
+═══════════════════════════════════════════ -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+
+      <div class="reveal">
+        <p class="section-label">About me</p>
+        <h2 class="about-heading">
+          Research first.<br>
+          <span class="serif">Design always.</span>
+        </h2>
+
+        <p class="about-text">
+          I'm a dual-degree student at the <strong>University of Sydney</strong>, combining Interaction Design with Business Information Systems (graduating 2027). My background spans startups, fintech, and federal government — with a consistent focus on research-driven product and design work.
+        </p>
+        <p class="about-text">
+          At <strong>DEWR</strong>, I contribute to the Enterprise Design System, conduct user research, and apply WCAG accessibility standards across government digital products. I also co-founded <strong>Wellna</strong> — a wellness marketplace backed by Plus Eight (NSW Government), Catalysr, and INCUBATE.
+        </p>
+        <p class="about-text">
+          I'm actively seeking internships and vacationer programs where design thinking and product strategy genuinely intersect.
+        </p>
+      </div>
+
+      <div class="reveal" data-delay="150">
+        <div class="skills-section">
+          <p class="skills-heading">Core skills</p>
+          <div class="skills-grid" data-stagger>
+            <div class="skill-item reveal"><span class="skill-dot"></span>Figma & prototyping</div>
+            <div class="skill-item reveal"><span class="skill-dot"></span>User research</div>
+            <div class="skill-item reveal"><span class="skill-dot"></span>WCAG accessibility</div>
+            <div class="skill-item reveal"><span class="skill-dot"></span>Enterprise design systems</div>
+            <div class="skill-item reveal"><span class="skill-dot"></span>Product strategy</div>
+            <div class="skill-item reveal"><span class="skill-dot"></span>Agile / sprint planning</div>
+            <div class="skill-item reveal"><span class="skill-dot"></span>HTML & CSS</div>
+            <div class="skill-item reveal"><span class="skill-dot"></span>Service design</div>
+            <div class="skill-item reveal"><span class="skill-dot"></span>Go-to-market planning</div>
+            <div class="skill-item reveal"><span class="skill-dot"></span>Product analytics</div>
+          </div>
+        </div>
+
+        <div style="margin-top: 2.5rem; padding: 1.5rem; background: var(--black-2); border: 1px solid var(--border); border-radius: var(--radius-lg);">
+          <p class="skills-heading" style="margin-bottom: 0.75rem;">Currently</p>
+          <p style="font-family: var(--mono); font-size: 12px; color: var(--white-dim); line-height: 1.8;">
+            UI/UX Design Digital Cadet @ DEWR<br>
+            Co-Founder &amp; CEO @ Wellna<br>
+            Dual degree @ University of Sydney<br>
+            Open to internships &amp; vacationer programs ↗
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     PROJECTS
+═══════════════════════════════════════════ -->
+<section id="projects">
+  <div class="container">
+    <div class="projects-header reveal">
+      <div>
+        <p class="section-label">Selected work</p>
+        <h2 class="projects-heading">Projects</h2>
+      </div>
+      <span style="font-family: var(--mono); font-size: 11px; color: var(--white-faint);">2024 – 2025</span>
+    </div>
+
+    <div class="projects-grid" data-stagger>
+
+      <!-- FEATURED: Resolve -->
+      <a class="project-card-featured reveal" href="case-resolve.html">
+        <div class="project-thumb thumb-resolve">
+          <div style="display:flex; gap: 20px; align-items: center;">
+            <div class="phone-mock">
+              <div class="phone-notch"></div>
+              <div class="phone-row">Good Morning, Jordan!</div>
+              <div class="phone-row" style="color: #fff; font-size: 6px;">Challenge this week</div>
+              <div class="phone-row" style="color: #E05C7E;">Overwhelmancer</div>
+              <div class="phone-bar"></div>
+              <div class="phone-bar dim"></div>
+              <div class="phone-row" style="color: #C6F135; font-size: 6px;">Daily Quests</div>
+              <div class="phone-bar" style="width: 50%; background: #C6F135;"></div>
+            </div>
+            <div style="color: var(--green); font-size: 11px; font-family: var(--mono); opacity: 0.7; max-width: 120px; line-height: 1.6;">
+              Men's mental health · Gamified UX · MVP
+            </div>
+          </div>
+          <div style="position: absolute; top: 1rem; right: 1.5rem;">
+            <span class="tag tag-green">Team Lead</span>
+          </div>
+        </div>
+        <div class="project-body">
+          <div class="project-meta">
+            <span class="project-year">PRODIGI Studio · 2024</span>
+            <div class="project-tags">
+              <span class="tag">Figma</span>
+              <span class="tag">User Research</span>
+              <span class="tag">Agile</span>
+            </div>
+          </div>
+          <h3 class="project-title">Resolve — Men's Mental Health App</h3>
+          <p class="project-desc">Led a cross-functional design team to build a gamified MVP for men's mental health over nine weeks. Defined the product roadmap, conducted qualitative user interviews, and facilitated agile sprint planning and retrospectives.</p>
+          <div class="project-footer">
+            <div class="project-tags">
+              <span class="tag tag-green">Product strategy</span>
+              <span class="tag tag-green">Prototyping</span>
+              <span class="tag tag-green">Usability testing</span>
+            </div>
+            <span class="project-cta">View case study →</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Nurse handover -->
+      <a class="project-card reveal" href="case-nurse.html">
+        <div class="project-thumb-sm thumb-nurse">
+          <div class="tablet-mock">
+            <div style="font-family: var(--mono); font-size: 6px; color: #5A8ACA; margin-bottom: 4px;">Roy Tram — Handover 24/9</div>
+            <div class="tablet-row"><div class="tablet-dot" style="background: #4A90D9;"></div>Ward 3B · Stroke</div>
+            <div class="tablet-row"><div class="tablet-dot" style="background: #E05C7E;"></div>BP 130/80 mmHg</div>
+            <div class="tablet-row"><div class="tablet-dot" style="background: #52B788;"></div>Meds reviewed ✓</div>
+            <div class="tablet-row"><div class="tablet-dot" style="background: #F0A500;"></div>O² 98%</div>
+          </div>
+        </div>
+        <div class="project-body-sm">
+          <div class="project-meta">
+            <span class="project-year">DECO2200 · 2024</span>
+          </div>
+          <h3 class="project-title-sm">Nurse Handover Tool</h3>
+          <p class="project-desc-sm">Ethnographic research and journey mapping to design a digital tool reducing miscommunication and patient risk in hospital handover processes.</p>
+          <div class="project-footer">
+            <div class="project-tags"><span class="tag">Service design</span></div>
+            <span class="project-cta">Case study →</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Grocery app -->
+      <a class="project-card-wide reveal" href="case-grocery.html">
+        <div class="project-thumb-sm thumb-grocery">
+          <div style="display: flex; gap: 12px; align-items: center;">
+            <div class="phone-mock" style="width: 100px;">
+              <div class="phone-notch"></div>
+              <div class="phone-row" style="color: #52B788;">Search items...</div>
+              <div class="phone-row" style="color: #fff; font-size: 6px;">Dairy-Free · Halal</div>
+              <div class="phone-bar" style="background: #52B788;"></div>
+              <div class="phone-row" style="font-size: 6px; color: #52B788;">Chicken Breasts</div>
+              <div class="phone-row" style="font-size: 6px; color: #52B788;">Oat Milk</div>
+              <div class="phone-bar dim"></div>
+            </div>
+            <div style="font-family: var(--mono); font-size: 10px; color: #52B788; opacity: 0.7; line-height: 1.8;">
+              Dietary-specific<br>grocery shopping<br>Mobile-first Figma
+            </div>
+          </div>
+        </div>
+        <div class="project-body-sm">
+          <div class="project-meta">
+            <span class="project-year">DECO2102 · 2024</span>
+            <div class="project-tags"><span class="tag">Interface Design</span></div>
+          </div>
+          <h3 class="project-title-sm">Dietary Grocery App</h3>
+          <p class="project-desc-sm">Mobile-first Figma prototype for dietary-specific grocery shopping. Wireframes → user flows → hi-fi, refined through peer usability testing.</p>
+          <div class="project-footer">
+            <div class="project-tags"><span class="tag">Figma</span><span class="tag">Usability testing</span></div>
+            <span class="project-cta">Case study →</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Web design -->
+      <a class="project-card-wide reveal" href="case-web.html">
+        <div class="project-thumb-sm thumb-web">
+          <div class="browser-mock">
+            <div class="browser-bar">
+              <div class="browser-dot" style="background: #E05C7E;"></div>
+              <div class="browser-dot" style="background: #F0A500;"></div>
+              <div class="browser-dot" style="background: #52B788;"></div>
+              <div class="browser-url"></div>
+            </div>
+            <div class="browser-content">
+              <div class="browser-line" style="width: 60%; height: 10px; background: #2A2416;"></div>
+              <div class="browser-line"></div>
+              <div class="browser-line" style="width: 80%;"></div>
+              <div style="height: 40px; background: #1F1A0F; border-radius: 4px; margin: 4px 0;"></div>
+              <div class="browser-line" style="width: 90%;"></div>
+              <div class="browser-line" style="width: 70%;"></div>
+            </div>
+          </div>
+        </div>
+        <div class="project-body-sm">
+          <div class="project-meta">
+            <span class="project-year">DECO1016 · 2024</span>
+            <div class="project-tags"><span class="tag">Web Design</span></div>
+          </div>
+          <h3 class="project-title-sm">Sydney Harbour Bridge Guide</h3>
+          <p class="project-desc-sm">HTML/CSS website for photographers and tourists with day/night toggle, WCAG accessibility, and mobile-responsive layout.</p>
+          <div class="project-footer">
+            <div class="project-tags"><span class="tag">HTML/CSS</span><span class="tag">Accessibility</span></div>
+            <span class="project-cta">Case study →</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     EXPERIENCE
+═══════════════════════════════════════════ -->
+<section id="experience">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">Where I've worked</p>
+      <h2 class="exp-heading">Experience</h2>
+    </div>
+
+    <div class="exp-list" data-stagger>
+
+      <div class="exp-row reveal">
+        <div class="exp-period">Feb 2025 – Present</div>
+        <div>
+          <div class="exp-role">UI/UX Design Digital Cadet</div>
+          <div class="exp-company">Dept. of Employment and Workplace Relations (DEWR)</div>
+          <p class="exp-desc">Contributing to the Enterprise Design System (EDS), designing and maintaining scalable UI components in Figma. Conducting user research, interviews, and usability testing across enterprise platforms. Applying inclusive design and WCAG accessibility standards within a federal government context.</p>
+          <div class="exp-tags">
+            <span class="tag tag-green">Enterprise design systems</span>
+            <span class="tag tag-green">WCAG accessibility</span>
+            <span class="tag tag-green">User research</span>
+            <span class="tag tag-green">Inclusive design</span>
+          </div>
+        </div>
+        <div class="exp-type">Cadetship</div>
+      </div>
+
+      <div class="exp-row reveal">
+        <div class="exp-period">Jul 2025 – Present</div>
+        <div>
+          <div class="exp-role">Co-Founder & CEO</div>
+          <div class="exp-company">Wellna</div>
+          <p class="exp-desc">Founded a wellness marketplace enabling salons and spas to monetise last-minute cancellations via AI-driven discounts. Directing product development, growth strategy, and go-to-market execution. Accepted into Plus Eight Pre-Accelerator (NSW Government backed), Catalysr Migrapreneur Fellowship, and INCUBATE Launch.</p>
+          <div class="exp-tags">
+            <span class="tag">Startup leadership</span>
+            <span class="tag">Product management</span>
+            <span class="tag">Go-to-market</span>
+            <span class="tag">Accelerator</span>
+          </div>
+        </div>
+        <div class="exp-type">Founder</div>
+      </div>
+
+      <div class="exp-row reveal">
+        <div class="exp-period">Sep – Nov 2024</div>
+        <div>
+          <div class="exp-role">Product Manager</div>
+          <div class="exp-company">Prodigi</div>
+          <p class="exp-desc">Led a cross-functional team of designers to conceptualise and deliver a men's mental health app MVP (Resolve). Defined the roadmap, conducted qualitative interviews and usability testing, and ran agile sprint ceremonies over 9 weeks.</p>
+          <div class="exp-tags">
+            <span class="tag">Product management</span>
+            <span class="tag">Agile</span>
+            <span class="tag">User research</span>
+          </div>
+        </div>
+        <div class="exp-type">Contract</div>
+      </div>
+
+      <div class="exp-row reveal">
+        <div class="exp-period">Jun 2024 – Feb 2025</div>
+        <div>
+          <div class="exp-role">Customer Experience Specialist</div>
+          <div class="exp-company">Zip Co</div>
+          <p class="exp-desc">Managed customer inquiries maintaining an average handling time of 8 minutes and resolving ~17 tickets per hour via Zendesk. Maintained 90%+ QA and 95%+ schedule adherence. Identified process improvements contributing to a positive customer experience.</p>
+          <div class="exp-tags">
+            <span class="tag">Customer experience</span>
+            <span class="tag">Zendesk</span>
+            <span class="tag">Fintech</span>
+          </div>
+        </div>
+        <div class="exp-type">Full-time</div>
+      </div>
+
+      <div class="exp-row reveal">
+        <div class="exp-period">Mar – Sep 2023</div>
+        <div>
+          <div class="exp-role">Associate Product Marketing Manager</div>
+          <div class="exp-company">Cashrewards</div>
+          <p class="exp-desc">Led Amplitude metric implementations identifying key drivers for an 83% surge in user engagement. Influenced product direction resulting in a 67% increase in customer acquisition and a 23% improvement in product adoption through UX and content improvements.</p>
+          <div class="exp-tags">
+            <span class="tag">Product marketing</span>
+            <span class="tag">Amplitude analytics</span>
+            <span class="tag">Go-to-market</span>
+          </div>
+        </div>
+        <div class="exp-type">Full-time</div>
+      </div>
+
+      <div class="exp-row reveal">
+        <div class="exp-period">2024 – 2027</div>
+        <div>
+          <div class="exp-role">Bachelor of Design (Interaction Design) & Business Information Systems</div>
+          <div class="exp-company">University of Sydney</div>
+          <p class="exp-desc">Dual degree combining HCI, UX, and interactive product design with Business Information Systems. Coursework: Figma, product design, UX/UI, user research, interface design, web development, creative coding, and information visualisation.</p>
+          <div class="exp-tags">
+            <span class="tag">Interaction design</span>
+            <span class="tag">Business IS</span>
+            <span class="tag">HCI</span>
+          </div>
+        </div>
+        <div class="exp-type">Education</div>
+      </div>
+
+      <div class="exp-row reveal">
+        <div class="exp-period">2022 – 2023</div>
+        <div>
+          <div class="exp-role">Diploma of Project Management</div>
+          <div class="exp-company">TAFE NSW</div>
+          <p class="exp-desc">Trained in project planning, agile methods, and collaborative tools including Jira, Trello, and Microsoft Project.</p>
+          <div class="exp-tags">
+            <span class="tag">Agile</span>
+            <span class="tag">Jira</span>
+            <span class="tag">Project management</span>
+          </div>
+        </div>
+        <div class="exp-type">Education</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     CONTACT
+═══════════════════════════════════════════ -->
+<section id="contact">
+  <div class="contact-glow"></div>
+  <div class="container">
+    <div class="contact-inner reveal">
+      <p class="section-label">Get in touch</p>
+      <h2 class="contact-heading">
+        Let's build<br>
+        something <span class="serif green">worth using.</span>
+      </h2>
+      <p class="contact-sub">
+        Open to vacationer programs, internships, and conversations about PM and UX roles. Based in Sydney — happy to chat remotely or in person.
+      </p>
+      <div class="contact-actions">
+        <a class="btn-primary" href="mailto:shayaansalahuddin@gmail.com">Email me ↗</a>
+        <a class="btn-ghost" href="https://linkedin.com/in/shayaan-salahuddin" target="_blank">LinkedIn ↗</a>
+      </div>
+      <div class="contact-row">
+        <div class="contact-item">
+          <span class="contact-item-label">Email</span>
+          <span class="contact-item-val">shayaansalahuddin@gmail.com</span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-item-label">Location</span>
+          <span class="contact-item-val">Sydney, NSW, Australia</span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-item-label">University</span>
+          <span class="contact-item-val">University of Sydney</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="footer-text">© 2025 Shayaan Salahuddin</span>
+  <div class="footer-links">
+    <a href="mailto:shayaansalahuddin@gmail.com">Email</a>
+    <a href="https://linkedin.com/in/shayaan-salahuddin" target="_blank">LinkedIn</a>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
