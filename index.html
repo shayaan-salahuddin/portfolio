@@ -142,6 +142,27 @@
   animation: fadeIn 1s 0.8s ease both;
 }
 
+.hero-org-pill {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: var(--white-dim);
+  background: var(--black-2);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  padding: 6px 14px;
+  white-space: nowrap;
+  transition: border-color 0.2s, color 0.2s;
+}
+.hero-org-pill:hover { border-color: var(--border-hover); color: var(--white); }
+.hero-org-dot {
+  width: 5px; height: 5px;
+  background: var(--green);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
 .scroll-line {
   width: 1px; height: 40px;
   background: linear-gradient(to bottom, var(--green), transparent);
@@ -206,6 +227,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 8px;
+  max-width: 420px;
 }
 
 .skill-item {
@@ -220,7 +242,8 @@
   transition: border-color 0.2s, color 0.2s;
 }
 
-.skill-item:hover { border-color: var(--border-hover); color: var(--white); }
+.skill-item:hover { background: var(--green); border-color: var(--green); color: var(--black); }
+.skill-item:hover .skill-dot { background: var(--black); }
 
 .skill-dot {
   width: 5px; height: 5px;
@@ -710,18 +733,13 @@ a:hover .project-cta { gap: 10px; }
 
   <div class="container hero-inner">
     <div style="max-width: 680px;">
-      <div class="hero-badge">
-        <span class="hero-badge-dot"></span>
-        Available for internships · Sydney, AU
-      </div>
-
       <h1 class="hero-headline">
         <span class="dim">Design</span><br>
         that <span class="accent">ships.</span>
       </h1>
 
       <p class="hero-sub">
-        I'm Shayaan — a product designer and entrepreneur with experience across startups, fintech, and government. Currently at DEWR, studying at the University of Sydney.
+        I'm Shay — a product designer and entrepreneur with a background across startups, fintech, and government. Currently at DEWR, studying at the University of Sydney.
       </p>
 
       <div class="hero-actions">
@@ -731,17 +749,13 @@ a:hover .project-cta { gap: 10px; }
     </div>
 
     <div class="hero-right">
-      <div class="hero-stat-card">
-        <span class="hero-stat-num">7+</span>
-        <span class="hero-stat-label">Projects shipped</span>
-      </div>
-      <div class="hero-stat-card">
-        <span class="hero-stat-num">2</span>
-        <span class="hero-stat-label">Degrees in progress</span>
-      </div>
-      <div class="hero-stat-card">
-        <span class="hero-stat-num">Gov · Startup · Fintech</span>
-        <span class="hero-stat-label">Industry range</span>
+      <div style="display:flex;flex-direction:column;gap:10px;align-items:flex-end;">
+        <div class="hero-org-pill"><span class="hero-org-dot"></span>DEWR</div>
+        <div class="hero-org-pill"><span class="hero-org-dot"></span>Wellna</div>
+        <div class="hero-org-pill"><span class="hero-org-dot"></span>Cashrewards</div>
+        <div class="hero-org-pill"><span class="hero-org-dot"></span>Zip Co</div>
+        <div class="hero-org-pill"><span class="hero-org-dot"></span>University of Sydney</div>
+        <div class="hero-org-pill"><span class="hero-org-dot"></span>TAFE NSW</div>
       </div>
     </div>
   </div>
@@ -773,7 +787,7 @@ a:hover .project-cta { gap: 10px; }
           At <strong>DEWR</strong>, I contribute to the Enterprise Design System, conduct user research, and apply WCAG accessibility standards across government digital products. I also co-founded <strong>Wellna</strong> — a wellness marketplace backed by Plus Eight (NSW Government), Catalysr, and INCUBATE.
         </p>
         <p class="about-text">
-          I'm actively seeking internships and vacationer programs where design thinking and product strategy genuinely intersect.
+          I'm interested in product and design roles where research, strategy, and craft genuinely intersect.
         </p>
       </div>
 
@@ -783,26 +797,13 @@ a:hover .project-cta { gap: 10px; }
           <div class="skills-grid" data-stagger>
             <div class="skill-item reveal"><span class="skill-dot"></span>Figma & prototyping</div>
             <div class="skill-item reveal"><span class="skill-dot"></span>User research</div>
+            <div class="skill-item reveal"><span class="skill-dot"></span>Product strategy</div>
             <div class="skill-item reveal"><span class="skill-dot"></span>WCAG accessibility</div>
             <div class="skill-item reveal"><span class="skill-dot"></span>Enterprise design systems</div>
-            <div class="skill-item reveal"><span class="skill-dot"></span>Product strategy</div>
-            <div class="skill-item reveal"><span class="skill-dot"></span>Agile / sprint planning</div>
-            <div class="skill-item reveal"><span class="skill-dot"></span>HTML & CSS</div>
-            <div class="skill-item reveal"><span class="skill-dot"></span>Service design</div>
-            <div class="skill-item reveal"><span class="skill-dot"></span>Go-to-market planning</div>
-            <div class="skill-item reveal"><span class="skill-dot"></span>Product analytics</div>
           </div>
         </div>
 
-        <div style="margin-top: 2.5rem; padding: 1.5rem; background: var(--black-2); border: 1px solid var(--border); border-radius: var(--radius-lg);">
-          <p class="skills-heading" style="margin-bottom: 0.75rem;">Currently</p>
-          <p style="font-family: var(--mono); font-size: 12px; color: var(--white-dim); line-height: 1.8;">
-            UI/UX Design Digital Cadet @ DEWR<br>
-            Co-Founder &amp; CEO @ Wellna<br>
-            Dual degree @ University of Sydney<br>
-            Open to internships &amp; vacationer programs ↗
-          </p>
-        </div>
+
       </div>
 
     </div>
@@ -816,7 +817,7 @@ a:hover .project-cta { gap: 10px; }
   <div class="container">
     <div class="projects-header reveal">
       <div>
-        <p class="section-label">Selected work</p>
+        <p class="section-label">Work showcase</p>
         <h2 class="projects-heading">Projects</h2>
       </div>
       <span style="font-family: var(--mono); font-size: 11px; color: var(--white-faint);">2024 – 2025</span>
@@ -981,10 +982,10 @@ a:hover .project-cta { gap: 10px; }
           <div class="exp-company">Dept. of Employment and Workplace Relations (DEWR)</div>
           <p class="exp-desc">Contributing to the Enterprise Design System (EDS), designing and maintaining scalable UI components in Figma. Conducting user research, interviews, and usability testing across enterprise platforms. Applying inclusive design and WCAG accessibility standards within a federal government context.</p>
           <div class="exp-tags">
-            <span class="tag tag-green">Enterprise design systems</span>
-            <span class="tag tag-green">WCAG accessibility</span>
-            <span class="tag tag-green">User research</span>
-            <span class="tag tag-green">Inclusive design</span>
+            <span class="tag">Enterprise design systems</span>
+            <span class="tag">WCAG accessibility</span>
+            <span class="tag">User research</span>
+            <span class="tag">Inclusive design</span>
           </div>
         </div>
         <div class="exp-type">Cadetship</div>
@@ -1051,19 +1052,27 @@ a:hover .project-cta { gap: 10px; }
         <div class="exp-type">Full-time</div>
       </div>
 
+    </div>
+
+    <div style="margin-top: 4rem;" class="reveal">
+      <p class="section-label">Education</p>
+    </div>
+
+    <div class="exp-list" data-stagger>
+
       <div class="exp-row reveal">
         <div class="exp-period">2024 – 2027</div>
         <div>
           <div class="exp-role">Bachelor of Design (Interaction Design) & Business Information Systems</div>
           <div class="exp-company">University of Sydney</div>
-          <p class="exp-desc">Dual degree combining HCI, UX, and interactive product design with Business Information Systems. Coursework: Figma, product design, UX/UI, user research, interface design, web development, creative coding, and information visualisation.</p>
+          <p class="exp-desc">Double degree combining HCI, UX, and interactive product design with Business Information Systems. Coursework: Figma, product design, UX/UI, user research, interface design, web development, creative coding, and information visualisation.</p>
           <div class="exp-tags">
             <span class="tag">Interaction design</span>
             <span class="tag">Business IS</span>
             <span class="tag">HCI</span>
           </div>
         </div>
-        <div class="exp-type">Education</div>
+        <div class="exp-type">Double degree</div>
       </div>
 
       <div class="exp-row reveal">
@@ -1078,7 +1087,7 @@ a:hover .project-cta { gap: 10px; }
             <span class="tag">Project management</span>
           </div>
         </div>
-        <div class="exp-type">Education</div>
+        <div class="exp-type">Diploma</div>
       </div>
 
     </div>
@@ -1098,11 +1107,11 @@ a:hover .project-cta { gap: 10px; }
         something <span class="serif green">worth using.</span>
       </h2>
       <p class="contact-sub">
-        Open to vacationer programs, internships, and conversations about PM and UX roles. Based in Sydney — happy to chat remotely or in person.
+        Open to product and design roles. Based in Sydney — happy to chat remotely or in person.
       </p>
       <div class="contact-actions">
         <a class="btn-primary" href="mailto:shayaansalahuddin@gmail.com">Email me ↗</a>
-        <a class="btn-ghost" href="https://linkedin.com/in/shayaan-salahuddin" target="_blank">LinkedIn ↗</a>
+        <a class="btn-ghost" href="https://linkedin.com/in/shayaansalahuddin" target="_blank">LinkedIn ↗</a>
       </div>
       <div class="contact-row">
         <div class="contact-item">
@@ -1123,10 +1132,10 @@ a:hover .project-cta { gap: 10px; }
 </section>
 
 <footer>
-  <span class="footer-text">© 2025 Shayaan Salahuddin</span>
+  <span class="footer-text">© 2025 Shay Salahuddin</span>
   <div class="footer-links">
     <a href="mailto:shayaansalahuddin@gmail.com">Email</a>
-    <a href="https://linkedin.com/in/shayaan-salahuddin" target="_blank">LinkedIn</a>
+    <a href="https://linkedin.com/in/shayaansalahuddin" target="_blank">LinkedIn</a>
   </div>
 </footer>
 
