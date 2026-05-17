@@ -1,5 +1,5 @@
 // ============================================
-// SHAYAAN SALAHUDDIN — Shared JS
+// SHAYAAN SALAHUDDIN, Shared JS
 // ============================================
 
 document.addEventListener('DOMContentLoaded', () => {
