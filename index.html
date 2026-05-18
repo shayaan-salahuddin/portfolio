@@ -4,7 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Shayaan Salahuddin - Product Designer</title>
-<meta name="description" content="Shayaan Salahuddin - Product designer and entrepreneur. UX, product strategy, accessible design. Based in Sydney, AU.">
+<meta name="description" content="Shayaan Salahuddin — Product designer and entrepreneur. UX, product strategy, accessible design. Based in Sydney, AU.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Shayaan Salahuddin">
+<meta property="og:title" content="Shayaan Salahuddin — Product Designer">
+<meta property="og:description" content="Product designer and entrepreneur. UX, product strategy, accessible design. Based in Sydney, AU.">
+<meta property="og:url" content="https://shayaan-salahuddin.github.io/portfolio/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Shayaan Salahuddin — Product Designer">
+<meta name="twitter:description" content="Product designer and entrepreneur. UX, product strategy, accessible design. Based in Sydney, AU.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="style.css">
 <style>
 /* ─── HERO ─────────────────────────────────── */
@@ -611,6 +620,15 @@ a:hover .project-cta { gap: 10px; }
   margin-bottom: 0.75rem;
 }
 
+.exp-company a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(198,241,53,0.3);
+  transition: border-color 0.2s;
+}
+
+.exp-company a:hover { border-bottom-color: var(--green); }
+
 .exp-desc {
   font-size: 14px;
   color: var(--white-dim);
@@ -721,7 +739,10 @@ a:hover .project-cta { gap: 10px; }
     <li><a href="#experience">Experience</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <a class="nav-cta" href="#contact">Hire me</a>
+  <a class="nav-cta" href="#contact">Let's Talk</a>
+  <button class="nav-burger" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
 <!-- ═══════════════════════════════════════════
@@ -733,6 +754,10 @@ a:hover .project-cta { gap: 10px; }
 
   <div class="container hero-inner">
     <div style="max-width: 680px;">
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        Available for roles
+      </div>
       <h1 class="hero-headline">
         <span class="dim">Design</span><br>
         that <span class="accent">ships.</span>
@@ -752,6 +777,7 @@ a:hover .project-cta { gap: 10px; }
       <div style="display:flex;flex-direction:column;gap:10px;align-items:flex-end;">
         <div class="hero-org-pill"><span class="hero-org-dot"></span>DEWR</div>
         <div class="hero-org-pill"><span class="hero-org-dot"></span>Wellna</div>
+        <div class="hero-org-pill"><span class="hero-org-dot"></span>Prodigi</div>
         <div class="hero-org-pill"><span class="hero-org-dot"></span>Cashrewards</div>
         <div class="hero-org-pill"><span class="hero-org-dot"></span>Zip Co</div>
         <div class="hero-org-pill"><span class="hero-org-dot"></span>University of Sydney</div>
@@ -781,7 +807,7 @@ a:hover .project-cta { gap: 10px; }
         </h2>
 
         <p class="about-text">
-          I'm a dual-degree student at the <strong>University of Sydney</strong>, combining Interaction Design with Business Information Systems (graduating 2027). My background spans startups, fintech, and federal government, with a consistent focus on research-driven product and design work.
+          I'm a double-degree student at the <strong>University of Sydney</strong>, combining Interaction Design with Business Information Systems (graduating 2027). My background spans startups, fintech, and federal government, with a consistent focus on research-driven product and design work.
         </p>
         <p class="about-text">
           At <strong>DEWR</strong>, I contribute to the Enterprise Design System, conduct user research, and apply WCAG accessibility standards across government digital products. I also co-founded <strong>Wellna</strong>, a wellness marketplace backed by Plus Eight (NSW Government), Catalysr, and INCUBATE.
@@ -979,7 +1005,7 @@ a:hover .project-cta { gap: 10px; }
         <div class="exp-period">Feb 2025 – Present</div>
         <div>
           <div class="exp-role">UI/UX Design Digital Cadet</div>
-          <div class="exp-company">Dept. of Employment and Workplace Relations (DEWR)</div>
+          <div class="exp-company"><a href="https://www.linkedin.com/company/ypayfinancial/" target="_blank" rel="noopener">Dept. of Employment and Workplace Relations (DEWR)</a></div>
           <p class="exp-desc">Contributing to the Enterprise Design System (EDS), designing and maintaining scalable UI components in Figma. Conducting user research, interviews, and usability testing across enterprise platforms. Applying inclusive design and WCAG accessibility standards within a federal government context.</p>
           <div class="exp-tags">
             <span class="tag">Enterprise design systems</span>
@@ -995,7 +1021,7 @@ a:hover .project-cta { gap: 10px; }
         <div class="exp-period">Jul 2025 – Present</div>
         <div>
           <div class="exp-role">Co-Founder & CEO</div>
-          <div class="exp-company">Wellna</div>
+          <div class="exp-company"><a href="https://www.linkedin.com/company/usewellna/" target="_blank" rel="noopener">Wellna</a></div>
           <p class="exp-desc">Founded a wellness marketplace enabling salons and spas to monetise last-minute cancellations via AI-driven discounts. Directing product development, growth strategy, and go-to-market execution. Accepted into Plus Eight Pre-Accelerator (NSW Government backed), Catalysr Migrapreneur Fellowship, and INCUBATE Launch.</p>
           <div class="exp-tags">
             <span class="tag">Startup leadership</span>
@@ -1011,7 +1037,7 @@ a:hover .project-cta { gap: 10px; }
         <div class="exp-period">Sep – Nov 2024</div>
         <div>
           <div class="exp-role">Product Manager</div>
-          <div class="exp-company">Prodigi</div>
+          <div class="exp-company"><a href="https://www.linkedin.com/company/prodigiau/" target="_blank" rel="noopener">Prodigi</a></div>
           <p class="exp-desc">Led a cross-functional team of designers to conceptualise and deliver a men's mental health app MVP (Resolve). Defined the roadmap, conducted qualitative interviews and usability testing, and ran agile sprint ceremonies over 9 weeks.</p>
           <div class="exp-tags">
             <span class="tag">Product management</span>
@@ -1026,7 +1052,7 @@ a:hover .project-cta { gap: 10px; }
         <div class="exp-period">Jun 2024 – Feb 2025</div>
         <div>
           <div class="exp-role">Customer Experience Specialist</div>
-          <div class="exp-company">Zip Co</div>
+          <div class="exp-company"><a href="https://www.linkedin.com/company/zip-co-limited/" target="_blank" rel="noopener">Zip Co</a></div>
           <p class="exp-desc">Managed customer inquiries maintaining an average handling time of 8 minutes and resolving ~17 tickets per hour via Zendesk. Maintained 90%+ QA and 95%+ schedule adherence. Identified process improvements contributing to a positive customer experience.</p>
           <div class="exp-tags">
             <span class="tag">Customer experience</span>
@@ -1041,7 +1067,7 @@ a:hover .project-cta { gap: 10px; }
         <div class="exp-period">Mar – Sep 2023</div>
         <div>
           <div class="exp-role">Associate Product Marketing Manager</div>
-          <div class="exp-company">Cashrewards</div>
+          <div class="exp-company"><a href="https://www.linkedin.com/company/bank-of-queensland/" target="_blank" rel="noopener">Cashrewards</a></div>
           <p class="exp-desc">Led Amplitude metric implementations identifying key drivers for an 83% surge in user engagement. Influenced product direction resulting in a 67% increase in customer acquisition and a 23% improvement in product adoption through UX and content improvements.</p>
           <div class="exp-tags">
             <span class="tag">Product marketing</span>
@@ -1064,7 +1090,7 @@ a:hover .project-cta { gap: 10px; }
         <div class="exp-period">2024 – 2027</div>
         <div>
           <div class="exp-role">Bachelor of Design (Interaction Design) & Business Information Systems</div>
-          <div class="exp-company">University of Sydney</div>
+          <div class="exp-company"><a href="https://www.linkedin.com/school/university-of-sydney/" target="_blank" rel="noopener">University of Sydney</a></div>
           <p class="exp-desc">Double degree combining HCI, UX, and interactive product design with Business Information Systems. Coursework: Figma, product design, UX/UI, user research, interface design, web development, creative coding, and information visualisation.</p>
           <div class="exp-tags">
             <span class="tag">Interaction design</span>
@@ -1079,7 +1105,7 @@ a:hover .project-cta { gap: 10px; }
         <div class="exp-period">2022 – 2023</div>
         <div>
           <div class="exp-role">Diploma of Project Management</div>
-          <div class="exp-company">TAFE NSW</div>
+          <div class="exp-company"><a href="https://www.linkedin.com/school/tafe-nsw/" target="_blank" rel="noopener">TAFE NSW</a></div>
           <p class="exp-desc">Trained in project planning, agile methods, and collaborative tools including Jira, Trello, and Microsoft Project.</p>
           <div class="exp-tags">
             <span class="tag">Agile</span>
@@ -1122,17 +1148,13 @@ a:hover .project-cta { gap: 10px; }
           <span class="contact-item-label">Location</span>
           <span class="contact-item-val">Sydney, NSW, Australia</span>
         </div>
-        <div class="contact-item">
-          <span class="contact-item-label">University</span>
-          <span class="contact-item-val">University of Sydney</span>
-        </div>
       </div>
     </div>
   </div>
 </section>
 
 <footer>
-  <span class="footer-text">© 2025 Shay Salahuddin</span>
+  <span class="footer-text">© 2025 - Shayaan Salahuddin</span>
   <div class="footer-links">
     <a href="mailto:shayaansalahuddin@gmail.com">Email</a>
     <a href="https://linkedin.com/in/shayaansalahuddin" target="_blank">LinkedIn</a>

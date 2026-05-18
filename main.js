@@ -69,6 +69,24 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(type, 400);
   });
 
+  // Mobile nav burger
+  const burger = document.querySelector('.nav-burger');
+  const mobileNav = document.querySelector('.nav-links');
+  if (burger && mobileNav) {
+    burger.addEventListener('click', () => {
+      const isOpen = mobileNav.classList.toggle('open');
+      burger.classList.toggle('open', isOpen);
+      burger.setAttribute('aria-expanded', String(isOpen));
+    });
+    mobileNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileNav.classList.remove('open');
+        burger.classList.remove('open');
+        burger.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+
   // Active nav link
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-links a');
